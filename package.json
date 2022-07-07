@@ -1,5 +1,5 @@
 {
-    "name": "browser-helpers",
+    "name": "@raphaelbernhart/browser-helpers",
     "version": "0.0.1",
     "description": "Helpers for the modern browser",
     "main": "index.ts",
