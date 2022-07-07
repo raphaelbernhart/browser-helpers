@@ -1,2 +1,3 @@
-# browser-helpers
-Browser Helpers
+# Browser Helpers
+
+Helpers for the modern browser
