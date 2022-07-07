@@ -15,9 +15,10 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                   node-version: 16
-            - run: npm install
-            - run: npm install -g typescript
-            - run: npm run test
+            - run: npm install --global yarn
+            - run: yarn install
+            - run: yarn global add typescript
+            - run: yarn run test
 
     publish:
         needs: test
@@ -27,9 +28,11 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                   node-version: 16
-            - run: npm install
-            - run: npm install -g typescript
-            - run: npm run build
+            - run: npm install --global yarn
+            - run: yarn install
+            - run: yarn global add typescript
+            - run: yarn run build
+            - run: ls -a
             - uses: JS-DevTools/npm-publish@v1
               with:
                   token: ${{ secrets.NPM_TOKEN }}
