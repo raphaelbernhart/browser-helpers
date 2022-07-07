@@ -1,10 +1,13 @@
 {
-  "name": "browser-helpers",
-  "version": "0.0.1",
-  "description": "Helpers for the modern browser",
-  "main": "index.ts",
-  "repository": "https://github.com/raphaelbernhart/browser-helpers.git",
-  "author": "raphaelbernhart <mail@raphaelbernhart.at>",
-  "license": "GPL-3.0",
-  "private": false
+    "name": "browser-helpers",
+    "version": "0.0.1",
+    "description": "Helpers for the modern browser",
+    "main": "index.ts",
+    "repository": "https://github.com/raphaelbernhart/browser-helpers.git",
+    "author": "raphaelbernhart <mail@raphaelbernhart.at>",
+    "license": "GPL-3.0",
+    "private": false,
+    "devDependencies": {
+        "@raphaelbernhart/prettier-config": "^1.0.1"
+    }
 }
