@@ -1,6 +1,6 @@
 {
     "name": "@raphaelbernhart/browser-helpers",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Helpers for the modern browser",
     "main": "index.ts",
     "repository": "https://github.com/raphaelbernhart/browser-helpers.git",
