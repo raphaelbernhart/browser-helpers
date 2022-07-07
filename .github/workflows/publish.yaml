@@ -16,7 +16,7 @@ jobs:
               with:
                   node-version: 16
             - run: npm install
-            - run: npm install typescript
+            - run: npm install --save-dev typescript
             - run: npm run test
 
     publish:
@@ -28,7 +28,7 @@ jobs:
               with:
                   node-version: 16
             - run: npm install
-            - run: npm install typescript
+            - run: npm install --save-dev typescript
             - run: npm run build
             - uses: JS-DevTools/npm-publish@v1
               with:
