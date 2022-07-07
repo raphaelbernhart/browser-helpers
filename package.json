@@ -7,6 +7,10 @@
     "author": "raphaelbernhart <mail@raphaelbernhart.at>",
     "license": "GPL-3.0",
     "private": false,
+    "scripts": {
+        "build": "tsc -b",
+        "test": "tsc --checkJs"
+    },
     "devDependencies": {
         "@raphaelbernhart/prettier-config": "^1.0.1"
     }
