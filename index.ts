@@ -132,3 +132,44 @@ export const navigateTab = (
     const target = newTab ? "_blank" : "";
     window.open(url, target);
 };
+
+/**
+ * Navigate the current window or a new window in the browser
+ *
+ *
+ * @param window - The browser window
+ * @param url - The KeyboardEvent code (e.g. 'Enter') https://docstore.mik.ua/orelly/webprog/DHTML_javascript/0596004672_jvdhtmlckbk-app-b.html
+ * @param newTab - Open a new tab or navigate the current one
+ *
+ */
+export const initConsole = (title: string): void => {
+    setTimeout(() => {
+        console.clear();
+        const spacingCount: number = 25 - title.length;
+        const halfSpacingCount: number = spacingCount / 2;
+        let newTitle: string = title;
+        let titleIsOdd;
+        if (halfSpacingCount % 2 === 1) titleIsOdd = true;
+        else titleIsOdd = false;
+
+        for (let i = 0; i < spacingCount; i++) {
+            if (halfSpacingCount > i + 1) newTitle = `\x20${newTitle}`;
+            else newTitle = `${newTitle}\x20`;
+
+            if (titleIsOdd) newTitle = newTitle.slice(0, newTitle.length);
+        }
+        console.log(titleIsOdd);
+        // console.log(newTitle);
+        console.log(`-------------------------------------------${
+            !titleIsOdd ? "" : "--"
+        }
+-------- ${!titleIsOdd ? "" : "  "}${newTitle} --------
+-------------------------------------------${!titleIsOdd ? "" : "--"}`);
+        console.log(`
+╔╗──╔╗─╔╗─╔╗──────────╔╗───────╔╗───────╔╗─────╔╗
+║╚╦╦╬╬╗║╚╗║╚╦╦╗╔╦╦═╗╔═╣╚╦═╗╔═╦╗║╚╦═╦╦╦═╦╣╚╦═╗╔╦╣╚╗
+║╬║║║║╚╣╔╣║╬║║║║╔╣╬╚╣╬║║║╬╚╣╩╣╚╣╬║╩╣╔╣║║║║║╬╚╣╔╣╔╣
+╚═╩═╩╩═╩═╝╚═╬╗║╚╝╚══╣╔╩╩╩══╩═╩═╩═╩═╩╝╚╩═╩╩╩══╩╝╚═╝
+────────────╚═╝─────╚╝`);
+    }, 250);
+};

@@ -1,15 +1,17 @@
 {
     "name": "@raphaelbernhart/browser-helpers",
-    "version": "0.0.3",
+    "version": "0.0.6",
     "description": "Helpers for the modern browser",
-    "main": "index.ts",
+    "main": "dist/index.js",
     "repository": "https://github.com/raphaelbernhart/browser-helpers.git",
     "author": "raphaelbernhart <mail@raphaelbernhart.at>",
     "license": "GPL-3.0",
     "private": false,
     "scripts": {
+        "dev": "tsc -w",
         "build": "tsc -b",
-        "test": "tsc --checkJs"
+        "test": "tsc --checkJs",
+        "test:action": "act --secret-file .secrets"
     },
     "devDependencies": {
         "@raphaelbernhart/prettier-config": "^1.0.1"
