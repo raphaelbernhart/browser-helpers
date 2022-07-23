@@ -8,6 +8,7 @@
     "license": "GPL-3.0",
     "private": false,
     "scripts": {
+        "dev": "tsc -w",
         "build": "tsc -b",
         "test": "tsc --checkJs",
         "test:action": "act --secret-file .secrets"
