@@ -158,8 +158,6 @@ export const initConsole = (title: string): void => {
 
             if (titleIsOdd) newTitle = newTitle.slice(0, newTitle.length);
         }
-        console.log(titleIsOdd);
-        // console.log(newTitle);
         console.log(`-------------------------------------------${
             !titleIsOdd ? "" : "--"
         }
