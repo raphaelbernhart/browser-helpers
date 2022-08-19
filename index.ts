@@ -142,32 +142,42 @@ export const navigateTab = (
  * @param newTab - Open a new tab or navigate the current one
  *
  */
-export const initConsole = (title: string): void => {
-    setTimeout(() => {
-        console.clear();
-        const spacingCount: number = 25 - title.length;
-        const halfSpacingCount: number = spacingCount / 2;
-        let newTitle: string = title;
-        let titleIsOdd;
-        if (halfSpacingCount % 2 === 1) titleIsOdd = true;
-        else titleIsOdd = false;
+export const initConsole = (
+    author: string,
+    title: string,
+    repository?: string,
+    websiteUrl?: string
+): void => {
+    try {
+        // Error Checking
+        if (!author) throw "Author is undefined";
+        if (!title) throw "Title is undefined";
 
-        for (let i = 0; i < spacingCount; i++) {
-            if (halfSpacingCount > i + 1) newTitle = `\x20${newTitle}`;
-            else newTitle = `${newTitle}\x20`;
+        const logInitialitation = () => {
+            // Log
 
-            if (titleIsOdd) newTitle = newTitle.slice(0, newTitle.length);
-        }
-        console.log(`-------------------------------------------${
-            !titleIsOdd ? "" : "--"
-        }
--------- ${!titleIsOdd ? "" : "  "}${newTitle} --------
--------------------------------------------${!titleIsOdd ? "" : "--"}`);
-        console.log(`
-╔╗──╔╗─╔╗─╔╗──────────╔╗───────╔╗───────╔╗─────╔╗
-║╚╦╦╬╬╗║╚╗║╚╦╦╗╔╦╦═╗╔═╣╚╦═╗╔═╦╗║╚╦═╦╦╦═╦╣╚╦═╗╔╦╣╚╗
-║╬║║║║╚╣╔╣║╬║║║║╔╣╬╚╣╬║║║╬╚╣╩╣╚╣╬║╩╣╔╣║║║║║╬╚╣╔╣╔╣
-╚═╩═╩╩═╩═╝╚═╬╗║╚╝╚══╣╔╩╩╩══╩═╩═╩═╩═╩╝╚╩═╩╩╩══╩╝╚═╝
-────────────╚═╝─────╚╝`);
-    }, 250);
+            console.log(
+                `%cThis is ${title}\n%c\nDo you see bugs or room for improvement -> Feel free to report them and open an issue.\n\n${
+                    repository ? `🚩 Open an issue: ${repository}\n` : ""
+                }${
+                    websiteUrl
+                        ? `🌐 Take a look at my website: ${websiteUrl}`
+                        : ""
+                }`,
+                "font-size: 18px",
+                "color: white"
+            );
+            // Log Author
+            console.log(
+                "\n%cbuilt by Raphael Bernhart\n\n",
+                "font-weight: bold; font-size: 32px;color: #FFF3DA; text-shadow: 2px 2px 0 #262626 , 4px 4px 0 #F46932 , 6px 6px 0 #F19C2E , 8px 8px 0 #F63535"
+            );
+        };
+
+        setTimeout(() => {
+            logInitialitation();
+        }, 500);
+    } catch (err) {
+        throw Error(err);
+    }
 };

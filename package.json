@@ -1,6 +1,6 @@
 {
     "name": "@raphaelbernhart/browser-helpers",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "Helpers for the modern browser",
     "main": "dist/index.js",
     "repository": "https://github.com/raphaelbernhart/browser-helpers.git",
