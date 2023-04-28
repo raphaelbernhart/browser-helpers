@@ -148,36 +148,30 @@ export const initConsole = (
     repository?: string,
     websiteUrl?: string
 ): void => {
-    try {
-        // Error Checking
-        if (!author) throw "Author is undefined";
-        if (!title) throw "Title is undefined";
+    // Error Checking
+    if (!author) throw "Author is undefined";
+    if (!title) throw "Title is undefined";
 
-        const logInitialitation = () => {
-            // Log
+    const logInitialitation = () => {
+        // Log
 
-            console.log(
-                `%cThis is ${title}\n%c\nDo you see bugs or room for improvement -> Feel free to report them and open an issue.\n\n${
-                    repository ? `🚩 Open an issue: ${repository}\n` : ""
-                }${
-                    websiteUrl
-                        ? `🌐 Take a look at my website: ${websiteUrl}`
-                        : ""
-                }`,
-                "font-size: 18px",
-                "color: white"
-            );
-            // Log Author
-            console.log(
-                "\n%cbuilt by Raphael Bernhart\n\n",
-                "font-weight: bold; font-size: 32px;color: #FFF3DA; text-shadow: 2px 2px 0 #262626 , 4px 4px 0 #F46932 , 6px 6px 0 #F19C2E , 8px 8px 0 #F63535"
-            );
-        };
+        console.log(
+            `%cThis is ${title}\n%c\nDo you see bugs or room for improvement -> Feel free to report them and open an issue.\n\n${
+                repository ? `🚩 Open an issue: ${repository}\n` : ""
+            }${
+                websiteUrl ? `🌐 Take a look at my website: ${websiteUrl}` : ""
+            }`,
+            "font-size: 18px",
+            "color: white"
+        );
+        // Log Author
+        console.log(
+            "\n%cbuilt by Raphael Bernhart\n\n",
+            "font-weight: bold; font-size: 32px;color: #FFF3DA; text-shadow: 2px 2px 0 #262626 , 4px 4px 0 #F46932 , 6px 6px 0 #F19C2E , 8px 8px 0 #F63535"
+        );
+    };
 
-        setTimeout(() => {
-            logInitialitation();
-        }, 500);
-    } catch (err) {
-        throw Error(err);
-    }
+    setTimeout(() => {
+        logInitialitation();
+    }, 500);
 };
