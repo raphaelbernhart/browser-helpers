@@ -29,6 +29,19 @@ export const genID = (
 };
 
 /**
+ * Generates a random Id with specified length
+ *
+ *
+ * @param {number} length How many characters the generated ID should have
+ * @param {boolean} [trailingDash] If the id should contain trailing dashes
+ * @returns {string} The generated Id
+ *
+ */
+export const generateId = (length?: number, trailingDash?: boolean): string => {
+    return genID(length, trailingDash);
+};
+
+/**
  * Sanitize the <script> tag out of a string
  *
  *
