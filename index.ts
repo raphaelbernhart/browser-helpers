@@ -116,15 +116,6 @@ export const listenKeystroke = (
     return callback;
 };
 
-// TODO
-// Add Function which clears keystroke listener from 'listenKeystroke' function
-// export const removeKeystrokeListener = (
-//     window: Window,
-//     fnc: Function,
-// ): void => {
-//     window.removeEventListener('keydown', fnc);
-// };
-
 /**
  * Navigate the current window or a new window in the browser
  *
