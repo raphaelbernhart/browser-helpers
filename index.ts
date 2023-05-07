@@ -92,7 +92,6 @@ export const isUrlValid = (string: string): boolean => {
     }
 };
 
-// TODO
 // Check for CTRL, SHIFT and ALT keys
 /**
  * Listen for keystrokes of a certain key
