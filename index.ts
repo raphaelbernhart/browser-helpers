@@ -178,3 +178,6 @@ export const initConsole = (
         logInitialitation();
     }, 500);
 };
+
+// TODO
+// Object default values / reset object to default values
