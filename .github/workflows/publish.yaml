@@ -32,7 +32,6 @@ jobs:
             - run: yarn install
             - run: yarn global add typescript
             - run: yarn run build
-            - run: ls -a
             - uses: JS-DevTools/npm-publish@v1
               with:
                   token: ${{ secrets.NPM_TOKEN }}
