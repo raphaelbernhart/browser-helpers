@@ -140,9 +140,10 @@ export const navigateTab = (
  * Navigate the current window or a new window in the browser
  *
  *
- * @param window - The browser window
- * @param url - The KeyboardEvent code (e.g. 'Enter') https://docstore.mik.ua/orelly/webprog/DHTML_javascript/0596004672_jvdhtmlckbk-app-b.html
- * @param newTab - Open a new tab or navigate the current one
+ * @param {string} author The Author of the project
+ * @param {string} title The project title f.e. "Unlighthouse Online"
+ * @param {string} [repository] The project repository url / issue page url
+ * @param {string} [websiteUrl] The project website url
  *
  */
 export const initConsole = (
@@ -156,8 +157,7 @@ export const initConsole = (
     if (!title) throw "Title is undefined";
 
     const logInitialitation = () => {
-        // Log
-
+        // Log Issue prompt
         console.log(
             `%cThis is ${title}\n%c\nDo you see bugs or room for improvement -> Feel free to report them and open an issue.\n\n${
                 repository ? `🚩 Open an issue: ${repository}\n` : ""
