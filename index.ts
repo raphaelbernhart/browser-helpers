@@ -1,15 +1,16 @@
 /**
- * Generates ID
+ * Generates a random Id with specified length
  *
  *
- * @param length - How many characters the generated ID should have
- * @returns The generated ID
+ * @param {number} length How many characters the generated ID should have
+ * @param {boolean} [trailingDash] If the id should contain trailing dashes
+ * @returns {string} The generated Id
  *
  */
-export const genID = (length?: number): string => {
-    let finalLength = 5;
-    if (length) finalLength = length;
-
+export const genID = (
+    length: number = 5,
+    trailingDash: boolean = true
+): string => {
     const id = () => {
         return Math.floor((1 + Math.random()) * 0x10000)
             .toString(16)
@@ -19,9 +20,8 @@ export const genID = (length?: number): string => {
     let i = 0;
     let finalID = id();
 
-    while (i < finalLength - 1) {
-        finalID = finalID + "-" + id();
-
+    while (i < length - 1) {
+        finalID = `${finalID}${trailingDash === true ? "-" : ""}${id()}`;
         i++;
     }
 
