@@ -1,15 +1,16 @@
 /**
- * Generates ID
+ * Generates a random Id with specified length
  *
  *
- * @param length - How many characters the generated ID should have
- * @returns The generated ID
+ * @param {number} length How many characters the generated ID should have
+ * @param {boolean} [trailingDash] If the id should contain trailing dashes
+ * @returns {string} The generated Id
  *
  */
-export const genID = (length?: number): string => {
-    let finalLength = 5;
-    if (length) finalLength = length;
-
+export const genID = (
+    length: number = 5,
+    trailingDash: boolean = true
+): string => {
     const id = () => {
         return Math.floor((1 + Math.random()) * 0x10000)
             .toString(16)
@@ -19,13 +20,25 @@ export const genID = (length?: number): string => {
     let i = 0;
     let finalID = id();
 
-    while (i < finalLength - 1) {
-        finalID = finalID + "-" + id();
-
+    while (i < length - 1) {
+        finalID = `${finalID}${trailingDash === true ? "-" : ""}${id()}`;
         i++;
     }
 
     return finalID;
+};
+
+/**
+ * Generates a random Id with specified length
+ *
+ *
+ * @param {number} length How many characters the generated ID should have
+ * @param {boolean} [trailingDash] If the id should contain trailing dashes
+ * @returns {string} The generated Id
+ *
+ */
+export const generateId = (length?: number, trailingDash?: boolean): string => {
+    return genID(length, trailingDash);
 };
 
 /**
@@ -79,7 +92,6 @@ export const isUrlValid = (string: string): boolean => {
     }
 };
 
-// TODO
 // Check for CTRL, SHIFT and ALT keys
 /**
  * Listen for keystrokes of a certain key
@@ -103,15 +115,6 @@ export const listenKeystroke = (
     window.addEventListener("keydown", callback);
     return callback;
 };
-
-// TODO
-// Add Function which clears keystroke listener from 'listenKeystroke' function
-// export const removeKeystrokeListener = (
-//     window: Window,
-//     fnc: Function,
-// ): void => {
-//     window.removeEventListener('keydown', fnc);
-// };
 
 /**
  * Navigate the current window or a new window in the browser
@@ -137,9 +140,10 @@ export const navigateTab = (
  * Navigate the current window or a new window in the browser
  *
  *
- * @param window - The browser window
- * @param url - The KeyboardEvent code (e.g. 'Enter') https://docstore.mik.ua/orelly/webprog/DHTML_javascript/0596004672_jvdhtmlckbk-app-b.html
- * @param newTab - Open a new tab or navigate the current one
+ * @param {string} author The Author of the project
+ * @param {string} title The project title f.e. "Unlighthouse Online"
+ * @param {string} [repository] The project repository url / issue page url
+ * @param {string} [websiteUrl] The project website url
  *
  */
 export const initConsole = (
@@ -153,8 +157,7 @@ export const initConsole = (
     if (!title) throw "Title is undefined";
 
     const logInitialitation = () => {
-        // Log
-
+        // Log Issue prompt
         console.log(
             `%cThis is ${title}\n%c\nDo you see bugs or room for improvement -> Feel free to report them and open an issue.\n\n${
                 repository ? `🚩 Open an issue: ${repository}\n` : ""
@@ -175,3 +178,6 @@ export const initConsole = (
         logInitialitation();
     }, 500);
 };
+
+// TODO
+// Object default values / reset object to default values
